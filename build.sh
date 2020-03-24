@@ -12,6 +12,9 @@ echo "Building plugin as $PLUGIN_NAME"
 
 docker plugin rm -f $PLUGIN_NAME || true
 docker rmi -f rootfsimage || true
+
+set -e
+
 docker build . -t rootfsimage
 id=$(docker create rootfsimage true)
 rm -rf ./build/rootfs
