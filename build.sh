@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ $EUID -ne 0 ]]; then
-    error "This script should be run using sudo or as the root user"
+    echo "This script should be run using sudo or as the root user"
     exit 1
 fi
 
