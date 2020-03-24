@@ -1,0 +1,15 @@
+{ 
+  "name": "homecentr-$$IMAGE_NAME$$",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/homecentr/docker-$$IMAGE_NAME$$.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/homecentr/docker-$$IMAGE_NAME$$/issues"
+  },
+  "homepage": "https://github.com/homecentr/docker-$$IMAGE_NAME$$#readme"
+}

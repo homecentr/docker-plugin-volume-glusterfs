@@ -1,0 +1,20 @@
+name: Regular Docker image vulnerability scan
+on:
+  schedule:
+    - cron: '0 6 * * *'
+
+env:
+  IMAGE_NAME: "homecentr/$$IMAGE_NAME$$"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull Docker image
+        run: docker pull ${{ env.IMAGE_NAME }}:latest
+
+      - name: Scan image for vulnerabilities
+        uses: phonito/phonito-scanner-action@master
+        with:
+          image: ${{ env.IMAGE_NAME }}:latest
+          phonito-token: '${{ secrets.PHONITO_TOKEN }}'
