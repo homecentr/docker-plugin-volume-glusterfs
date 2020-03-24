@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  svc:
+    image: nginx
+    restart: unless-stopped
+    volumes:
+      - vol1:/tmp/vol1
+
+volumes:
+  vol1:
+    driver: homecentr/glusterfs-volume-plugin:local
+    driver_opts:
+      servers: 192.168.2.16,192.168.2.17,192.168.2.18
+    name: "durable-config/vol1"
