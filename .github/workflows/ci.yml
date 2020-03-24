@@ -30,9 +30,5 @@ jobs:
           image: ${{ env.PLUGIN_NAME }}:${{ steps.vars.outputs.docker_tag }}
           phonito-token: '${{ secrets.PHONITO_TOKEN }}'
 
-      - name: Print working dir
-        run: sudo echo $PWD && ls -l
-        shell: bash
-
       - name: Build Docker plugin
-        run: sudo sh ./build.sh
+        run: sudo sh ./build.sh "${{ steps.vars.outputs.docker_tag }}"
