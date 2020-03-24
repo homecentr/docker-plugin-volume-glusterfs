@@ -31,9 +31,8 @@ jobs:
           phonito-token: '${{ secrets.PHONITO_TOKEN }}'
 
       - name: Print working dir
-        run: echo $PWD  
+        run: echo $PWD && ls -l
         shell: bash
 
       - name: Build Docker plugin
-        run: ./build.sh
-        shell: bash
+        run: sh ./build.sh
