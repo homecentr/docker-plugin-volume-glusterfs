@@ -1,2 +1,2 @@
-rootProject.name = 'docker-$$IMAGE_NAME$$-tests'
+rootProject.name = 'docker-glusterfs-volume-plugin-tests'
 

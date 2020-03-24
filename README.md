@@ -1,4 +1,4 @@
-# HomeCentr - $$IMAGE_NAME$$
+# HomeCentr - glusterfs-volume-plugin
 Template repository for Docker container repositories
 
 ## Project status

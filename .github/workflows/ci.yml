@@ -6,7 +6,7 @@ on:
   pull_request:
 
 env:
-  IMAGE_NAME: "homecentr/$$IMAGE_NAME$$"
+  IMAGE_NAME: "homecentr/glusterfs-volume-plugin"
 
 jobs:
   build:

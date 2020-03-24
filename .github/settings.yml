@@ -1,6 +1,6 @@
 # https://developer.github.com/v3/repos/#edit
 repository:
-  name: docker-$$IMAGE_NAME$$
+  name: docker-glusterfs-volume-plugin
   description: ""
   homepage: https://homecentr.github.io/
   private: false

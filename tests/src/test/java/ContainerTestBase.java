@@ -13,7 +13,7 @@ public abstract class ContainerTestBase {
 
     @BeforeClass
     public static void setUp() {
-        String dockerImageTag = System.getProperty("image_tag", "homecentr/$$IMAGE_NAME$$");
+        String dockerImageTag = System.getProperty("image_tag", "homecentr/glusterfs-volume-plugin");
 
         logger.info("Tested Docker image tag: {}", dockerImageTag);
 
