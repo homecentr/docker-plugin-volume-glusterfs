@@ -34,6 +34,7 @@ jobs:
           phonito-token: '${{ secrets.PHONITO_TOKEN }}'
 
       - name: Build Docker plugin
+        if: env.RELEASE_VERSION != ''
         run: sudo sh ./build.sh "${{ env.RELEASE_VERSION }}"
 
       - name: "Log into Docker Hub"
