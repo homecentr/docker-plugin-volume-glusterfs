@@ -2,10 +2,11 @@ name: CI/CD on master
 on:
   push:
     # branches:
-    #   - master
+    #   - master  
 
 env:
   PLUGIN_NAME: "homecentr/glusterfs-volume-plugin"
+  RELEASE_VERSION: 1.0.1
 
 jobs:
   build:
@@ -13,10 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - name: "Determine release version"
-        uses: codfish/semantic-release-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: "Determine release version"
+      #   uses: codfish/semantic-release-action@master
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Verify Dockerfile with Hadolint
         uses: brpaz/hadolint-action@master

@@ -1,5 +1,5 @@
 {
-  branch: 'feature/v1',
+  branch: 'master',
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
