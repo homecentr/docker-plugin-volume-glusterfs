@@ -1,7 +1,7 @@
 # https://developer.github.com/v3/repos/#edit
 repository:
-  name: docker-$$IMAGE_NAME$$
-  description: ""
+  name: docker-glusterfs-volume-plugin
+  description: "Repackaged version of the trajano/glusterfs-volume-plugin to support latest version of Glusterfs"
   homepage: https://homecentr.github.io/
   private: false
   has_issues: true
@@ -21,7 +21,7 @@ branches:
     protection:
       required_status_checks:
         strict: true
-        contexts: [ ".github/workflows/ci.yml" ]
+        contexts: [ "build", "Semantic Pull Request" ]
       required_pull_request_reviews: null
       enforce_admins: false
       restrictions:

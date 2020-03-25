@@ -1,0 +1,36 @@
+{
+    "description": "GlusterFS (v6) plugin for Docker",
+    "documentation": "https://homecentr.github.io",
+    "entrypoint": [
+        "/usr/bin/glusterfs-volume-plugin"
+    ],
+    "env": [
+        {
+            "name": "SERVERS",
+            "settable": [
+                "value"
+            ],
+            "value": ""
+        }
+    ],
+    "network": {
+        "type": "host"
+    },
+    "propagatedMount": "/var/lib/docker-volumes",
+    "interface": {
+        "types": [
+            "docker.volumedriver/1.0"
+        ],
+        "socket": "gfs.sock"
+    },
+    "linux": {
+        "capabilities": [
+            "CAP_SYS_ADMIN"
+        ],
+        "devices": [
+            {
+                "path": "/dev/fuse"
+            }
+        ]
+    }
+}

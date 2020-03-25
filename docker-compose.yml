@@ -1,6 +1,6 @@
 version: "3.7"
 services:
-  $$IMAGE_NAME$$:
+  glusterfs-volume-plugin:
     build: .
-    image: homecentr/$$IMAGE_NAME$$
+    image: homecentr/glusterfs-volume-plugin
     restart: unless-stopped

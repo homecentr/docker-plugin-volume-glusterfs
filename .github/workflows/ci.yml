@@ -6,7 +6,7 @@ on:
   pull_request:
 
 env:
-  IMAGE_NAME: "homecentr/$$IMAGE_NAME$$"
+  PLUGIN_NAME: "homecentr/glusterfs-volume-plugin"
 
 jobs:
   build:
@@ -14,11 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - name: Set up java for tests execution
-        uses: actions/setup-java@v1
-        with:
-          java-version: 11
-      
       - name: Set tag var
         id: vars
         run: echo ::set-output name=docker_tag::$(echo ${GITHUB_REF} | cut -d'/' -f3)-${GITHUB_SHA}
@@ -27,13 +22,13 @@ jobs:
         uses: brpaz/hadolint-action@master      
 
       - name: Build Docker image
-        run: docker build . -t ${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.docker_tag }}
-
-      - name: Test Docker image
-        run: cd tests && sudo gradle test --info -Dimage_tag=${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.docker_tag }}
+        run: docker build . -t ${{ env.PLUGIN_NAME }}:${{ steps.vars.outputs.docker_tag }}
 
       - name: Scan with Phonito Security
         uses: phonito/phonito-scanner-action@master
         with:
-          image: ${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.docker_tag }}
-          phonito-token: '${{ secrets.PHONITO_TOKEN }}'      
+          image: ${{ env.PLUGIN_NAME }}:${{ steps.vars.outputs.docker_tag }}
+          phonito-token: '${{ secrets.PHONITO_TOKEN }}'
+
+      - name: Build Docker plugin
+        run: sudo sh ./build.sh "${{ steps.vars.outputs.docker_tag }}"
