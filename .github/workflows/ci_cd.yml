@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@master
 
       - name: "Determine release version"
-        uses: codfish/semantic-release-action@master
+        uses: codfish/semantic-release-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

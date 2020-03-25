@@ -4,12 +4,12 @@
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/homecentr/docker-glusterfs-volume-plugin.git"
+    "url": "git+https://github.com/homecentr/docker-plugin-volume-glusterfs.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/homecentr/docker-glusterfs-volume-plugin/issues"
+    "url": "https://github.com/homecentr/docker-plugin-volume-glusterfs/issues"
   },
-  "homepage": "https://github.com/homecentr/docker-glusterfs-volume-plugin#readme"
+  "homepage": "https://github.com/homecentr/docker-plugin-volume-glusterfs#readme"
 }
