@@ -8,7 +8,7 @@ WORKDIR /go/src/github.com/trajano/docker-volume-plugins/glusterfs-volume-plugin
 
 RUN go get ./... && go build
 
-FROM centos:8.1.1911
+FROM centos:8.2.2004
 
 # Copy the plugin binary from the build stage
 COPY --from=build /go/src/github.com/trajano/docker-volume-plugins/glusterfs-volume-plugin/glusterfs-volume-plugin /usr/bin/glusterfs-volume-plugin
