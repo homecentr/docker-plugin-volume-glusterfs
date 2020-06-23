@@ -7,7 +7,7 @@ add-apt-repository ppa:gluster/glusterfs-7
 apt-get update
 
 # Install gluster
-apt-get install glusterfs-server=7.4 -y
+apt-get install glusterfs-server=7.6-ubuntu1~bionic1 -y
 
 # Start gluster daemon
 systemctl start glusterd
