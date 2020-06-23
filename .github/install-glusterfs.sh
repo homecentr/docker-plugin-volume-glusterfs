@@ -20,7 +20,7 @@ mkdir /tmp/vol01
 
 # Create the volume
 gluster volume create vol01 "$(hostname):/tmp/vol01" force
-gluster volume start vol1
+gluster volume start vol01
 
 # Mount the volume locally
 mkdir -p /mnt/glusterfs
