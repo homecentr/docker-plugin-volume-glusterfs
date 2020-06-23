@@ -2,7 +2,7 @@
 
 # Add gluster repository
 apt-get install software-properties-common -y
-wget -O- https://download.gluster.org/pub/gluster/glusterfs/7/7.4/rsa.pub | apt-key add -
+wget -O- https://download.gluster.org/pub/gluster/glusterfs/7/rsa.pub | apt-key add -
 add-apt-repository ppa:gluster/glusterfs-7
 apt-get update
 
