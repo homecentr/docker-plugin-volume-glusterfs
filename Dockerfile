@@ -15,8 +15,8 @@ COPY --from=build /go/src/github.com/trajano/docker-volume-plugins/glusterfs-vol
 
 # Install glusterfs dependencies
 RUN yum install -q -y \
-      glusterfs-6.0-15.el8 \
-      glusterfs-fuse-6.0-15.el8 \
+      glusterfs-6.0-20.el8 \
+      glusterfs-fuse-6.0-20.el8 \
       attr-2.4.48-3.el8 && \
     yum autoremove -q -y && \
     yum clean all && \
