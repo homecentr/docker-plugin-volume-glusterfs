@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 # Add gluster repository
-apt install software-properties-common -y
+apt-get install software-properties-common -y
 wget -O- https://download.gluster.org/pub/gluster/glusterfs/7/7.4/rsa.pub | apt-key add -
-add-apt-repository ppa:gluster/glusterfs-7.4
-apt update
+add-apt-repository ppa:gluster/glusterfs-7
+apt-get update
 
 # Install gluster
-apt install glusterfs-server -y
+apt-get install glusterfs-server=7.4 -y
 
 # Start gluster daemon
 systemctl start glusterd
