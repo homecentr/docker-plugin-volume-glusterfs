@@ -19,9 +19,9 @@ gluster pool list
 mkdir /tmp/vol01
 
 # Create the volume
-gluster volume create vol01 $HOSTNAME:/tmp/vol01 force
+gluster volume create vol01 "$(hostname):/tmp/vol01" force
 gluster volume start vol1
 
 # Mount the volume locally
 mkdir -p /mnt/glusterfs
-mount -t glusterfs $HOSTNAME:vol01 /mnt/glusterfs
+mount -t glusterfs "$(hostname):vol01" /mnt/glusterfs
