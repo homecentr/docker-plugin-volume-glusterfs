@@ -22,5 +22,5 @@ mkdir -p ./build/rootfs
 docker export "$id" | tar -x -C ./build/rootfs
 docker rm -vf "$id"
 cp ./config.json ./build/config.json
-docker plugin $PLUGIN_NAME ./build
+docker plugin create $PLUGIN_NAME ./build
 docker plugin enable $PLUGIN_NAME
