@@ -1,6 +1,20 @@
 version: "3.7"
 services:
-  glusterfs-volume-plugin:
-    build: .
-    image: homecentr/glusterfs-volume-plugin
-    restart: unless-stopped
+  client1:
+    image: alpine
+    command: sleep 1000h
+    volumes:
+      - "vol01:/gfs:rw"
+
+  client2:
+    image: alpine
+    command: sleep 1000h
+    volumes:
+      - "vol01:/gfs:rw"
+
+volumes:
+  vol01:
+    driver: homecentr/glusterfs-volume-plugin:local
+    driver_opts:
+      servers: localhost
+    name: "vol01/tst"

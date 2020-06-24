@@ -37,6 +37,10 @@ jobs:
         if: env.RELEASE_VERSION != ''
         run: sudo sh ./build.sh "${{ env.RELEASE_VERSION }}"
 
+        # The property is still called docker_image_tag because the tests use the same resolver as normal image tests
+      - name: Test Docker plugin
+        run: cd tests && sudo gradle test --info -Ddocker_image_tag=${{ env.PLUGIN_NAME }}:${{ steps.vars.outputs.docker_tag }}
+
       - name: "Log into Docker Hub"
         if: env.RELEASE_VERSION != ''
         run: "echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin"

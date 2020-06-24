@@ -1,5 +1,5 @@
 {
-    "description": "GlusterFS (v6) plugin for Docker",
+    "description": "GlusterFS (v7) plugin for Docker",
     "documentation": "https://homecentr.github.io",
     "entrypoint": [
         "/usr/bin/glusterfs-volume-plugin"
