@@ -13,9 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-
-      - name: Install Glusterfs
-        run: sudo sh ./.github/install-glusterfs.sh
         
       - name: Set tag var
         id: vars
