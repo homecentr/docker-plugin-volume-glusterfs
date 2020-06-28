@@ -39,6 +39,7 @@ jobs:
 
         # The property is still called docker_image_tag because the tests use the same resolver as normal image tests
       - name: Test Docker plugin
+        if: env.RELEASE_VERSION != ''
         run: cd tests && sudo gradle test --info -Ddocker_image_tag=${{ env.PLUGIN_NAME }}:${{ steps.vars.outputs.docker_tag }}
 
       - name: "Log into Docker Hub"
