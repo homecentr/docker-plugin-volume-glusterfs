@@ -33,6 +33,13 @@ jobs:
           image: ${{ env.PLUGIN_NAME }}:${{ env.RELEASE_VERSION }}
           phonito-token: '${{ secrets.PHONITO_TOKEN }}'
 
+      - name: Scan with Snyk
+        uses: snyk/actions/docker@0.1.1
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          image: ${{ env.PLUGIN_NAME }}:${{ env.RELEASE_VERSION }}
+
       - name: Build Docker plugin
         if: env.RELEASE_VERSION != ''
         run: sudo sh ./build.sh "${{ env.RELEASE_VERSION }}"
