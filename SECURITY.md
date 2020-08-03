@@ -10,6 +10,6 @@ Known security issues will be published in GitHub repository's Security / Securi
 
 ## Automated processes
 
-The Docker image is scanned for vulnerabilities every 24 hours using [Phonito.io](https://phonito.io/?b=a) and [Snyk](https://snyk.io). You can see the scan status under the actions tab / Regular Docker image vulnerability scan.
+The Docker image is scanned for vulnerabilities before every release using [Phonito.io](https://phonito.io/?b=a) and [Snyk](https://snyk.io).
 
 The dependencies are automatically scanned using [Dependabot](https://dependabot.com/). Dependencies are regularly updated. You can check for pending dependency updates by listing open Pull requests with the "dependencies" label.
