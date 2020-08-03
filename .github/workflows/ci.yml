@@ -35,7 +35,7 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          image: ${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.docker_tag }}
+          image: ${{ env.PLUGIN_NAME }}:${{ steps.vars.outputs.docker_tag }}
 
       - name: Build Docker plugin
         run: sudo sh ./build.sh "${{ steps.vars.outputs.docker_tag }}"
