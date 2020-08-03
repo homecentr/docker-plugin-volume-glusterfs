@@ -30,6 +30,13 @@ jobs:
           image: ${{ env.PLUGIN_NAME }}:${{ steps.vars.outputs.docker_tag }}
           phonito-token: '${{ secrets.PHONITO_TOKEN }}'
 
+      - name: Scan with Snyk
+        uses: snyk/actions/docker@0.1.1
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          image: ${{ env.PLUGIN_NAME }}:${{ steps.vars.outputs.docker_tag }}
+
       - name: Build Docker plugin
         run: sudo sh ./build.sh "${{ steps.vars.outputs.docker_tag }}"
 
