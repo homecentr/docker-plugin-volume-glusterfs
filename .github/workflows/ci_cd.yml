@@ -34,6 +34,7 @@ jobs:
           phonito-token: '${{ secrets.PHONITO_TOKEN }}'
 
       - name: Scan with Snyk
+        if: env.RELEASE_VERSION != ''
         uses: snyk/actions/docker@0.1.1
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
