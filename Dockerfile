@@ -14,4 +14,8 @@ FROM archlinux:20200705
 COPY --from=build /go/src/github.com/trajano/docker-volume-plugins/glusterfs-volume-plugin/glusterfs-volume-plugin /usr/bin/glusterfs-volume-plugin
 
 # Install glusterfs dependencies
-RUN pacman -Sy -y --noconfirm glusterfs
+RUN pacman -Sy && \
+    pacman -U --noconfirm https://archive.archlinux.org/packages/g/glusterfs/glusterfs-1:7.6-1-x86_64.pkg.tar.zst && \
+    #pacman -Sy -y --noconfirm glusterfs && \
+    pacman -Sc --noconfirm && \
+    rm -rf /var/cache/pacman/pkg
