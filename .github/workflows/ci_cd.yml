@@ -60,7 +60,7 @@ jobs:
 
       - name: "Update Docker Hub description"
         if: env.RELEASE_VERSION != ''
-        uses: peter-evans/dockerhub-description@v2.3.0
+        uses: peter-evans/dockerhub-description@v2.4.2
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
