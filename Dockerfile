@@ -1,4 +1,4 @@
-FROM golang:1.14.6 as build
+FROM golang:1.16.0 as build
 
 # Download the plugin source
 RUN go get github.com/trajano/docker-volume-plugins/glusterfs-volume-plugin
